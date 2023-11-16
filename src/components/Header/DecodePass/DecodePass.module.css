@@ -11,4 +11,5 @@
     width: 100%;
     text-align: center;
     padding: 6px;
+    background-color: var(--tg-theme-bg-color);
 }

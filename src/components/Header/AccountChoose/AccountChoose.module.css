@@ -2,6 +2,7 @@
     width: 100%;
     padding: 6px;
     text-align: center;
+    background-color: var(--tg-theme-bg-color);
 }
 
 .SelectorSelect {
@@ -11,6 +12,6 @@
     min-width: 80px;
     width: auto;
     cursor: pointer;
-    background-color: var(--tg-theme-bg-color);
+    background-color: var(--tg-theme-secondary-bg-color);
     color: var(--tg-theme-text-color);
 }
