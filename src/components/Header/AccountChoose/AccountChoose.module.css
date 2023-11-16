@@ -1,0 +1,14 @@
+.SelectorDiv {
+    width: 100%;
+    padding: 6px;
+    text-align: center;
+}
+
+.SelectorSelect {
+    margin-left: 6px;
+    padding-left: 6px;
+    border-radius: 10px;
+    min-width: 80px;
+    width: auto;
+    cursor: pointer;
+}

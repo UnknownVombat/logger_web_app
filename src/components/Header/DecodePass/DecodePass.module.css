@@ -1,0 +1,11 @@
+.PassInput {
+    width: 80%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.PassDiv {
+    width: 100%;
+    text-align: center;
+    padding: 6px;
+}
