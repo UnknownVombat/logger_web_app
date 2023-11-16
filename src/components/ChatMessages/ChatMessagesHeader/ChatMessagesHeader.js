@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from "../ChatMessages.module.css";
+import styles from "./ChatMessagesHeader.module.css";
 import HeaderText from "./HeaderText/HeaderText";
 import HeaderButton from "./HeaderButton/HeaderButton";
 
-const ChatMessagesHeader = (chat_id) => {
+const ChatMessagesHeader = ({chat_id}) => {
     return (
         <div className={styles.headerDiv}>
             <HeaderButton />

@@ -3,6 +3,7 @@ import styles from "./HeaderText.module.css";
 import {messages} from "../../../../Array";
 
 const HeaderText = ({chat_id}) => {
+    console.log(chat_id, messages)
     return (
         <div className={styles.textDiv}>
             <h3 className={styles.text}>Диалог с пользователем {messages[chat_id].name}</h3>
