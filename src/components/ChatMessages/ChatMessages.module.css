@@ -3,6 +3,12 @@
     font-size: 20px;
 }
 
+.h2 {
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+}
+
 .ChatMessagesDiv {
     overflow-y: hidden;
     height: 100%;

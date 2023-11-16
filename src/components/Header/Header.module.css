@@ -1,4 +1,4 @@
 .HeaderDiv {
     border-bottom: black solid 1px;
-
+    var(--tg-theme-bg-color)
 }
