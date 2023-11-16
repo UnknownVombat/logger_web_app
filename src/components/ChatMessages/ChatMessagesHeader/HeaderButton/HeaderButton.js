@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 const HeaderButton = () => {
     return (
         <Link to='/' className={styles.buttonDiv}>
-            <box-icon name='left-arrow-alt'></box-icon>
+            <box-icon name='left-arrow-alt' color='var(--tg-theme-text-color)'></box-icon>
         </Link>
     );
 };
