@@ -1,0 +1,11 @@
+.paragraph {
+    font-size: 16px;
+    text-align: left;
+    padding-bottom: 3px;
+    font-weight: bold;
+    color: white;
+}
+
+.burger {
+    width: 15%;
+}
