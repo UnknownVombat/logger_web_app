@@ -1,8 +1,7 @@
 import React from 'react';
-import {Link, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import styles from './ChatMessages.module.css'
 import Message from './MessagesDiv/MessagesDiv'
-import {messages} from "../../Array";
 import ChatMessagesHeader from "./ChatMessagesHeader/ChatMessagesHeader";
 
 const ChatMessages = () => {
