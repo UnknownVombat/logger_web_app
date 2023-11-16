@@ -1,0 +1,22 @@
+.searchDiv {
+    padding: 6px;
+    background-color: #0573FA;
+    border-bottom: black solid 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+.paragraph {
+    font-size: 16px;
+    text-align: left;
+    padding-bottom: 3px;
+    font-weight: bold;
+    margin-left: 3px;
+}
+
+.input {
+    font-size: 14px;
+    color: black;
+    padding-left: 6px;
+    border-radius: 10px;
+}

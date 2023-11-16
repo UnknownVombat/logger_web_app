@@ -1,0 +1,8 @@
+.header {
+    width: 100%;
+    background-color: #1B3DFA;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    /*position: fixed;*/
+}
