@@ -11,4 +11,6 @@
     min-width: 80px;
     width: auto;
     cursor: pointer;
+    background-color: var(--tg-theme-secondary-bg-color);
+    color: var(--tg-theme-text-color);
 }

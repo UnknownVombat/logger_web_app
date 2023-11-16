@@ -11,6 +11,7 @@ const AccountChoose = () => {
     return(<div className={styles.SelectorDiv}>
         Чаты аккаунта:
         <select className={styles.SelectorSelect} >
+            {/*<option key={defaultAcc} onClick={() => {accChange(defaultAcc)}}>{defaultAcc}</option>*/}
             {accs.map((acc) => {return <option key={acc} onClick={() => {accChange(acc)}}>{acc}</option>})}
         </select>
     </div>)
