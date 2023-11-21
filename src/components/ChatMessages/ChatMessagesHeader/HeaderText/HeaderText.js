@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from "./HeaderText.module.css";
-import {messages} from "../../../../Array";
+import {messageStorage} from "../../../../storages/MessagesStorage";
 
-const HeaderText = ({chat_id}) => {
-    console.log(chat_id, messages)
+const HeaderText = () => {
+    const name = messageStorage((state) => state.name)
     return (
         <div className={styles.textDiv}>
-            <h3 className={styles.text}>Диалог с пользователем {messages[chat_id].name}</h3>
+            <h3 className={styles.text}>Диалог с пользователем {name}</h3>
         </div>
     );
 };
