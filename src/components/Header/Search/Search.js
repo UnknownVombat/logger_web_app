@@ -11,7 +11,7 @@ const Search = () => {
         filterChats()
     }, [placeText, filterChats]);
     return(<div className={styles.SearchDiv}>
-        <input type='text' placeholder={placeText} className={styles.SearchInput} onInput={(event) => changeText(event.target.value)}/>
+        <input type='text' placeholder={placeText} className={styles.SearchInput} onInput={(event) => changeText(event.target.value.toLowerCase())}/>
     </div>)
 }
 
