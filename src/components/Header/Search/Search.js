@@ -9,7 +9,7 @@ const Search = () => {
     const filterChats = chatStorage((state) => state.filterChats)
     useEffect(() => {
         filterChats()
-    }, [placeText]);
+    }, [placeText, filterChats]);
     return(<div className={styles.SearchDiv}>
         <input type='text' placeholder={placeText} className={styles.SearchInput} onInput={(event) => changeText(event.target.value)}/>
     </div>)
