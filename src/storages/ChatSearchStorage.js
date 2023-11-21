@@ -24,7 +24,7 @@ export const chatStorage = create(
                 ))})
             )
         ,
-            changeText: (text) => set((state) => ({searchText: text})),
+            changeText: (text) => set(() => ({searchText: text})),
             filteredChats: chats
         }
     ),
