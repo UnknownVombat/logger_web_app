@@ -1,9 +1,11 @@
 import React from 'react';
 import styles from './ChatsList.module.css'
-import {chats} from "../../Array";
 import ChatCard from "./ChatCard/ChatCard";
+import {chatStorage} from "../../storages/ChatSearchStorage";
 
 const ChatsList = () => {
+    const chats = chatStorage((state => state.filteredChats))
+    console.log(chats)
     return (
         <div className={styles.ChatDiv}>
             <h3 className={styles.h3}>Чаты</h3>
