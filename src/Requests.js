@@ -26,6 +26,7 @@ export async function getMessages(user_id, chat_id) {
             alert(`Ошибка: ${response.statusCode} ${response}`)
         }
         const result_array = await response.json();
+        alert(JSON.stringify(result_array))
         // const parsedResult = result_array.map((result) => ({text: result.text, img: result.img, mes_time: result.time,
         //     from_id: (result.senderId === user_id ? 'user': 'opponent'), mes_id: result.id}));
         return result_array;
