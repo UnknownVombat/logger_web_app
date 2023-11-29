@@ -3,9 +3,14 @@ import ChatsList from "./components/ChatsList/ChatsList";
 import {Routes, Route} from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import ChatMessages from "./components/ChatMessages/ChatMessages";
+import {useEffect} from "react";
 
 
 function App() {
+    const wa = window.Telegram.WebApp;
+    useEffect(() => {
+        wa.ready()
+    }, [wa]);
     return (
         <div className="App">
             <Routes>
