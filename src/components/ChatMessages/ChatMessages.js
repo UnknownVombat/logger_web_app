@@ -9,8 +9,8 @@ import {getMessages} from "../../Requests";
 const ChatMessages = () => {
     const {chat_id} = useParams();
     console.log(chat_id)
-    const user_id = messageStorage((state) => state.user_id);
-    console.log(user_id)
+    const userid = messageStorage((state) => state.user_id);
+    const user_id = userid.user_id;
     const name = messageStorage((state) => state.name);
     console.log(name)
     const setMessages = messageStorage((state) => state.setMessages);
@@ -28,7 +28,7 @@ const ChatMessages = () => {
         }
 
         parseMess(user_id, chat_id)
-    }, [name, revokeMessages, setMessages, chat_id]);
+    }, [name, revokeMessages, setMessages, chat_id, user_id]);
     try{return (
         <div className={styles.ChatMessagesDiv}>
             <ChatMessagesHeader />
