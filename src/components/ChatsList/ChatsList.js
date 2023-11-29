@@ -7,7 +7,7 @@ import {getChats} from "../../Requests";
 const ChatsList = () => {
     const wa = window.Telegram.WebApp;
     const user_id = wa.initDataUnsafe;
-    console.log(user_id)
+    wa.showAlert(user_id)
     const chatsList = getChats(user_id);
     const setChats = chatStorage((state) => state.setChats);
     setChats(chatsList);
