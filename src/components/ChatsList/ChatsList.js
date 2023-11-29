@@ -7,6 +7,7 @@ import {getChats} from "../../Requests";
 const ChatsList = () => {
     const wa = window.Telegram.WebApp;
     const user_id = wa.initDataUnsafe?.user?.id;
+    wa.showAlert(user_id)
     useEffect(() => {
         async function parseChats(user_id){
             const chatsList = await getChats(user_id);

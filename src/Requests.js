@@ -1,4 +1,4 @@
-export async function getChats({user_id}) {
+export async function getChats(user_id) {
     const url = 'https://logger.sunrise-dev.online/api/dev/chats?botId=' + user_id;
     try {
         const response = await fetch(url, {method: 'GET'});
