@@ -8,15 +8,11 @@ import {getMessages} from "../../Requests";
 
 const ChatMessages = () => {
     const {chat_id} = useParams();
-    console.log(chat_id)
     const userid = messageStorage((state) => state.user_id);
     const user_id = userid.user_id;
     const name = messageStorage((state) => state.name);
-    console.log(name)
     const setMessages = messageStorage((state) => state.setMessages);
-    console.log(setMessages)
     const revokeMessages = messageStorage((state) => state.revokeMessages)
-    console.log(revokeMessages)
     useEffect(() => {
         console.log('Юзе эффект')
         async function parseMess(user_id, chat_id) {
@@ -29,6 +25,12 @@ const ChatMessages = () => {
 
         parseMess(user_id, chat_id)
     }, [name, revokeMessages, setMessages, chat_id, user_id]);
+    const messages = messageStorage((state) => state.messages)
+    if (messages.length === 0){
+        return (<div className={styles.MessagesDiv}>
+                    <p>Нет сообщений</p>
+                </div>)
+    }
     try{return (
         <div className={styles.ChatMessagesDiv}>
             <ChatMessagesHeader />
