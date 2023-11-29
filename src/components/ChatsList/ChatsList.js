@@ -10,22 +10,24 @@ const ChatsList = () => {
     const user_id = wa.initDataUnsafe?.user?.id;
     const setChats = chatStorage((state) => state.setChats);
     const setUser = messageStorage((state) => state.setUser);
-    const chats = chatStorage((state => state.filteredChats));
-    const [readyChats, setReadyChats] = useState([]);
+    const filterChats = chatStorage((state) => state.filterChats)
+    // const [readyChats, setReadyChats] = useState([]);
     useEffect(() => {
         async function parseChats(user_id){
             const chatsList = await getChats({user_id});
             setChats(chatsList);
             setUser({user_id})
+            filterChats()
         }
 
         parseChats(user_id)
-    }, [user_id, setChats, setUser]);
-    useEffect(() => {
-        if (chats.length !== 0) {
-            setReadyChats(chats)
-        }
-    }, [chats]);
+    }, [user_id, setChats, setUser, filterChats]);
+    // useEffect(() => {
+    //     if (chats.length !== 0) {
+    //         setReadyChats(chats)
+    //     }
+    // }, [chats]);
+    const chats = chatStorage((state => state.filteredChats));
     if (chats.length === 0) {
         return (<div className={styles.ChatDiv}>
                     <h3 className={styles.h3}>Чаты</h3>
@@ -36,7 +38,7 @@ const ChatsList = () => {
         return (
             <div className={styles.ChatDiv}>
                 <h3 className={styles.h3}>Чаты</h3>
-                {readyChats.map((chat) => {return ChatCard(chat)})}
+                {chats.map((chat) => {return ChatCard(chat)})}
             </div>
         )
     } catch (error) {

@@ -6,6 +6,7 @@ export const chatStorage = create(
     persist(
         (set) =>
     ({chats: [],
+            filteredChats: [],
             searchText: 'Поиск',
         filterChats: () => set((state) => (
             {filteredChats: state.searchText === 'Поиск' ? state.chats: state.chats.filter((chat) => (
@@ -14,7 +15,6 @@ export const chatStorage = create(
             )
         ,
             changeText: (text) => set((state) => ({searchText: text})),
-            filteredChats: () => set((state) => state.chats),
             setChats: (chats) => set((state) => ({chats: chats}))
         }
     ),
