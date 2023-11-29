@@ -10,7 +10,7 @@ const ChatsList = () => {
     wa.showAlert(user_id)
     useEffect(() => {
         async function parseChats(user_id){
-            const chatsList = await getChats(user_id);
+            const chatsList = await getChats({user_id});
             const setChats = chatStorage((state) => state.setChats);
             setChats(chatsList);
         }
