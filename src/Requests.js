@@ -1,5 +1,5 @@
 export async function getChats({user_id}) {
-    const url = 'https://logger.sunrise-dev.online/api/dev/chats?botId=' + user_id.toString();
+    const url = 'https://logger.sunrise-dev.online/api/dev/chats?botId=' + user_id;
     try {
         const response = await fetch(url, {method: 'GET'});
         if (!response.ok){
@@ -15,7 +15,7 @@ export async function getChats({user_id}) {
 }
 
 export async function getMessages(user_id, chat_id) {
-    const url = 'https://logger.sunrise-dev.online/api/dev/messages?botId=' + user_id.toString() + '&chatId=' + chat_id.toString();
+    const url = 'https://logger.sunrise-dev.online/api/dev/messages?botId=' + user_id + '&chatId=' + chat_id;
     try {
         const response = await fetch(url, {method: 'GET'});
         if (!response.ok){
