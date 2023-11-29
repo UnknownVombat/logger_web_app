@@ -5,7 +5,6 @@ import {messageStorage} from "../../../storages/MessagesStorage";
 
 const MessagesDiv = () => {
     const messages = messageStorage((state) => state.messages)
-    alert(JSON.stringify(messages));
 
     if (messages.length > 0){
         return (

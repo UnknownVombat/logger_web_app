@@ -9,7 +9,8 @@ const MessageCard = (message) => {
     return (
         <div className={cl[from]} key={message.id}>
             {message?.img ? <img src={message.img} alt=''/>: null}
-            {message?.text ? <p>{message.time}</p>: null}
+            {message?.text ? <p>{message.text}</p>: null}
+            <p>{message.time}</p>
         </div>
     );
 };

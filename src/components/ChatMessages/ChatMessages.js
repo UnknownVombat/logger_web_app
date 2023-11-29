@@ -28,7 +28,7 @@ const ChatMessages = () => {
     const messages = messageStorage((state) => state.messages)
     if (messages.length === 0){
         return (<div className={styles.MessagesDiv}>
-                    <p>Нет сообщений</p>
+                    <p>Идет загрузка</p>
                 </div>)
     }
     try{return (

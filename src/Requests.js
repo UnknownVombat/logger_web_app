@@ -22,11 +22,9 @@ export async function getMessages(user_id, chat_id) {
         const response = await fetch(url, {method: 'GET'});
         console.log(response);
         if (!response.ok){
-            // throw new Error('Ошибка получения данных: сообщения аккаунта' + user_id + 'c пользователем' + chat_id);
-            alert(`Ошибка: ${response.statusCode} ${response}`)
+            throw new Error('Ошибка получения данных: сообщения аккаунта' + user_id + 'c пользователем' + chat_id);
         }
         const result_array = await response.json();
-        alert(JSON.stringify(result_array))
         // const parsedResult = result_array.map((result) => ({text: result.text, img: result.img, mes_time: result.time,
         //     from_id: (result.senderId === user_id ? 'user': 'opponent'), mes_id: result.id}));
         return result_array;
