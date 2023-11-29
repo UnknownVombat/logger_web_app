@@ -3,7 +3,7 @@ import styles from './ChatPhoto.module.css'
 
 const ChatPhoto = ({chat}) => {
     return (
-        <img src={chat.avatar ? chat.avatar: 'logo192.png'} className={styles.ChatPhoto} alt=''/>
+        <img src={chat.avatar ? 'logo192.png': 'logo192.png'} className={styles.ChatPhoto} alt=''/>
     );
 };
 
