@@ -11,7 +11,7 @@ export const messageStorage = create(persist(
         setMessages: (mess) => set((state) => ({messages: mess})),
         setName: (name) => set((state) => ({name: name})),
         setUser: (user_id) => set((state) => ({user_id: user_id})),
-        revokeMessages: (id, name, data) => set((state) => ({chat_id: id, name: name, messages: data.messages}))
+        revokeMessages: (id, name) => set((state) => ({chat_id: id, name: name}))
     }),
     {name: 'chat-messages-storage',
         storage: createJSONStorage(() => sessionStorage)}
