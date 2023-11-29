@@ -28,6 +28,7 @@ const ChatsList = () => {
             </div>
         )
     } catch (error) {
+        console.log('Ошибка отображения чатов: ', error)
         return (
             <div className={styles.ChatDiv}>
                 <h3 className={styles.h3}>Чаты</h3>
