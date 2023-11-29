@@ -9,7 +9,7 @@ const ChatCard = (chat) => {
     const setName = messageStorage((state) => state.setName);
     setName(chat.name);
     return (<Link to={`/messages/${chat.telegramId}`} className={styles.CardLink}>
-            <div className={styles.CardDiv} key={chat.chat_id}>
+            <div className={styles.CardDiv} key={chat.telegramId}>
                 <ChatPhoto chat={chat}/>
                 <ChatInfo chat={chat}/>
             </div>
