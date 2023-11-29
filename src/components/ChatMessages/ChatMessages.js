@@ -7,14 +7,15 @@ import {messageStorage} from "../../storages/MessagesStorage";
 import {getMessages} from "../../Requests";
 
 const ChatMessages = () => {
-    const chat_id = useParams();
+    const {chat_id} = useParams();
+    console.log(chat_id)
     const user_id = messageStorage((state) => state.user_id);
     const name = messageStorage((state) => state.name);
     const setMessages = messageStorage((state) => state.setMessages);
     const revokeMessages = messageStorage((state) => state.revokeMessages)
     useEffect(() => {
         async function parseMess(user_id, chat_id) {
-            const mess = getMessages(user_id.user_id, chat_id.chat_id);
+            const mess = await getMessages(user_id.user_id, chat_id.chat_id);
             setMessages(mess);
             revokeMessages(chat_id, name, mess)
         }
