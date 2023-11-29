@@ -18,7 +18,7 @@ const ChatMessages = () => {
             const mess = await getMessages(user_id.user_id, chat_id);
             console.log(mess)
             setMessages(mess);
-            revokeMessages(chat_id, name, mess)
+            revokeMessages(chat_id, name)
         }
 
         parseMess(user_id, chat_id)
