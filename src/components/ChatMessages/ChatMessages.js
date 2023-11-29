@@ -27,7 +27,7 @@ const ChatMessages = () => {
             revokeMessages(chat_id, name)
         }
 
-        parseMess(user_id, chat_id).then(r => {console.log('хуй')})
+        parseMess(user_id, chat_id)
     }, [name, revokeMessages, setMessages, chat_id]);
     try{return (
         <div className={styles.ChatMessagesDiv}>
