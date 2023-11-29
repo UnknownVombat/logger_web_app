@@ -8,8 +8,6 @@ import ChatMessages from "./components/ChatMessages/ChatMessages";
 function App() {
     return (
         <div className="App">
-            {/*<Header status={1}/>*/}
-            {/*<ChatsList />*/}
             <Routes>
                 <Route path='/' element={<Layout />}>
                     <Route index element={<ChatsList />}/>

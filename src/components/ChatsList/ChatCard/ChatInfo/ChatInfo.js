@@ -3,10 +3,11 @@ import styles from "./ChatInfo.module.css";
 
 const ChatInfo = ({chat}) => {
     return (
-        <div key={chat.tgID} className={styles.CardDiv}>
-            <p>TelegramID: {chat.tgID}</p>
+        <div key={chat.chat_id} className={styles.CardDiv}>
+            <p>Пользователь: {chat.name}</p>
+            <p>TelegramID: {chat.chat_id}</p>
             <p>Username: {chat.username}</p>
-            <p>Last recent message: {chat.date}</p>
+            <p>Last recent message: {chat.last_time}</p>
         </div>
     );
 };

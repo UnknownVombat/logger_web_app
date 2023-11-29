@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './MessageCard.module.css'
-import logo from '../../../img/logo192.png'
 
 const MessageCard = (message) => {
-    const from = message.from
+    const from = message.from_id
     const cl = {'user': styles.MessageDivUser, 'opponent': styles.MessageDivOpponent}
     return (
-        <div className={cl[from]} key={message.message}>
-            {message.type === 'text' ? <p>{message.message}</p>: <img src={logo} alt=''/>}
+        <div className={cl[from]} key={message.mes_id}>
+            {message.text.length > 0 ? <p>{message.text}</p>: <img src={message.img} alt=''/>}
+            <p>{message.mes_time}</p>
         </div>
     );
 };
