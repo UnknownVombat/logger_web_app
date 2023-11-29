@@ -15,7 +15,7 @@ const ChatMessages = () => {
     const revokeMessages = messageStorage((state) => state.revokeMessages)
     useEffect(() => {
         async function parseMess(user_id, chat_id) {
-            const mess = await getMessages(user_id.user_id, chat_id.chat_id);
+            const mess = await getMessages(user_id.user_id, chat_id);
             setMessages(mess);
             revokeMessages(chat_id, name, mess)
         }
