@@ -6,9 +6,9 @@ export async function getChats({user_id}) {
             throw new Error('Ошибка получения данных: чаты аккаунта' + user_id);
         }
         const result_array = await response.json();
-        const parsedResult = result_array.map((result) => ({chat_id: result.telegramId, name: result.name, username: result.username,
-            chat_key: result.id, last_time: result.lastMessage, photo: result.avatar}));
-        return parsedResult
+        // const parsedResult = result_array.map((result) => ({chat_id: result.telegramId, name: result.name, username: result.username,
+        //     chat_key: result.id, last_time: result.lastMessage, photo: result.avatar}));
+        return result_array
     } catch (error) {
         console.error('Ошибка получения данных: чаты аккаунта' + user_id, error)
     }
@@ -22,9 +22,9 @@ export async function getMessages(user_id, chat_id) {
             throw new Error('Ошибка получения данных: сообщения аккаунта' + user_id + 'c пользователем' + chat_id);
         }
         const result_array = await response.json();
-        const parsedResult = result_array.map((result) => ({text: result.text, img: result.img, mes_time: result.time,
-            from_id: (result.senderId === user_id ? 'user': 'opponent'), mes_id: result.id}));
-        return parsedResult;
+        // const parsedResult = result_array.map((result) => ({text: result.text, img: result.img, mes_time: result.time,
+        //     from_id: (result.senderId === user_id ? 'user': 'opponent'), mes_id: result.id}));
+        return result_array;
     } catch (error) {
         console.error('Ошибка получения данных: чаты аккаунта' + user_id + 'c пользователем' + chat_id, error)
     }

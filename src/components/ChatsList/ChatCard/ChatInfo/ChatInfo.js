@@ -5,9 +5,9 @@ const ChatInfo = ({chat}) => {
     return (
         <div key={chat.chat_id} className={styles.CardDiv}>
             <p>Пользователь: {chat.name}</p>
-            <p>TelegramID: {chat.chat_id}</p>
+            <p>TelegramID: {chat.telegramId}</p>
             <p>Username: {chat.username}</p>
-            <p>Last recent message: {chat.last_time}</p>
+            <p>Last recent message: {chat.lastMessage}</p>
         </div>
     );
 };

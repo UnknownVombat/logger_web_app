@@ -4,7 +4,7 @@ import photo from '../../../../img/logo192.png'
 
 const ChatPhoto = ({chat}) => {
     return (
-        <img src={chat.photo ? chat.photo: photo} className={styles.ChatPhoto} alt=''/>
+        <img src={chat.avatar ? chat.avatar: photo} className={styles.ChatPhoto} alt=''/>
     );
 };
 

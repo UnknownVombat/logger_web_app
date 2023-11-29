@@ -3,19 +3,22 @@ import styles from './ChatsList.module.css'
 import ChatCard from "./ChatCard/ChatCard";
 import {chatStorage} from "../../storages/ChatSearchStorage";
 import {getChats} from "../../Requests";
+import {messageStorage} from "../../storages/MessagesStorage";
 
 const ChatsList = () => {
     const wa = window.Telegram.WebApp;
     const user_id = wa.initDataUnsafe?.user?.id;
     const setChats = chatStorage((state) => state.setChats);
+    const setUser = messageStorage((state) => state.setUser);
     useEffect(() => {
         async function parseChats(user_id){
             const chatsList = await getChats({user_id});
             setChats(chatsList);
+            setUser({user_id})
         }
 
         parseChats(user_id)
-    }, [user_id, setChats]);
+    }, [user_id, setChats, setUser]);
     const chats = chatStorage((state => state.filteredChats));
     try {
         return (
