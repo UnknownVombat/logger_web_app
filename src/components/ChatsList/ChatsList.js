@@ -8,13 +8,13 @@ const ChatsList = () => {
     const wa = window.Telegram.WebApp;
     const user_id = wa.initDataUnsafe?.user?.id;
     useEffect(() => {
-        async function parseChats(){
+        async function parseChats(user_id){
             const chatsList = await getChats(user_id);
             const setChats = chatStorage((state) => state.setChats);
             setChats(chatsList);
         }
 
-        parseChats()
+        parseChats(user_id)
     }, [user_id]);
     const chats = chatStorage((state => state.filteredChats));
     try {
