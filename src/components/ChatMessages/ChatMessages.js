@@ -28,7 +28,7 @@ const ChatMessages = () => {
         }
 
         parseMess(user_id, chat_id).then(r => {console.log('хуй')})
-    }, [name, revokeMessages, setMessages, user_id, chat_id]);
+    }, [name, revokeMessages, setMessages, chat_id]);
     try{return (
         <div className={styles.ChatMessagesDiv}>
             <ChatMessagesHeader />
