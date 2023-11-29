@@ -10,20 +10,24 @@ const ChatMessages = () => {
     const {chat_id} = useParams();
     console.log(chat_id)
     const user_id = messageStorage((state) => state.user_id);
+    console.log(user_id)
     const name = messageStorage((state) => state.name);
+    console.log(name)
     const setMessages = messageStorage((state) => state.setMessages);
+    console.log(setMessages)
     const revokeMessages = messageStorage((state) => state.revokeMessages)
+    console.log(revokeMessages)
     useEffect(() => {
         console.log('Юзе эффект')
         async function parseMess(user_id, chat_id) {
-            console.log('Вызвали функцию')
+            console.log('Вызвали функцию');
             const mess = await getMessages(user_id.user_id, chat_id);
-            console.log(mess)
+            console.log(mess);
             setMessages(mess);
             revokeMessages(chat_id, name)
         }
 
-        parseMess(user_id, chat_id)
+        parseMess(user_id, chat_id).then(r => {console.log('хуй')})
     }, [name, revokeMessages, setMessages, user_id, chat_id]);
     try{return (
         <div className={styles.ChatMessagesDiv}>
