@@ -16,6 +16,7 @@ const ChatMessages = () => {
     useEffect(() => {
         async function parseMess(user_id, chat_id) {
             const mess = await getMessages(user_id.user_id, chat_id);
+            console.log(mess)
             setMessages(mess);
             revokeMessages(chat_id, name, mess)
         }
