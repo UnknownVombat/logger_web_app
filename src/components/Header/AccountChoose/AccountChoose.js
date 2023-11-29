@@ -1,12 +1,16 @@
 import React from "react";
-import styles from './AccountChoose.module.css'
-import {accs} from "../../../Array";
+import styles from './AccountChoose.module.css';
 
 
 const AccountChoose = () => {
     function accChange(acc) {
         console.log(acc)
     }
+
+    const wa = window.Telegram.WebApp;
+    const user_id = wa.initDataUnsafe?.user?.id;
+    const username = wa.initDataUnsafe?.user?.username;
+    const accs = [username, user_id];
 
     return(<div className={styles.SelectorDiv}>
         Чаты аккаунта:
