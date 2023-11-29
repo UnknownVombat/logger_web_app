@@ -14,9 +14,9 @@ const ChatsList = () => {
     // const [readyChats, setReadyChats] = useState([]);
     useEffect(() => {
         async function parseChats(user_id){
+            setUser({user_id})
             const chatsList = await getChats({user_id});
             setChats(chatsList);
-            setUser({user_id})
             filterChats()
         }
 
