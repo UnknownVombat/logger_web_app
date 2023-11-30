@@ -18,7 +18,7 @@ const ChatsList = () => {
             return chatsList
         }
 
-        parseChats(user_id).then((chatsList) => {setChats(chatsList)})
+        parseChats(user_id).then((chatsList) => setChats(chatsList))
     });
     filterChats()
     const chats = chatStorage((state => state.filteredChats));
