@@ -22,11 +22,6 @@ const ChatsList = () => {
 
         parseChats(user_id)
     }, [user_id, setChats, setUser, filterChats]);
-    // useEffect(() => {
-    //     if (chats.length !== 0) {
-    //         setReadyChats(chats)
-    //     }
-    // }, [chats]);
     const chats = chatStorage((state => state.filteredChats));
     if (chats.length === 0) {
         return (<div className={styles.ChatDiv}>
