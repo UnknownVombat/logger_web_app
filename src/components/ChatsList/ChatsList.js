@@ -11,16 +11,16 @@ const ChatsList = () => {
     const setChats = chatStorage((state) => state.setChats);
     const setUser = messageStorage((state) => state.setUser);
     const filterChats = chatStorage((state) => state.filterChats)
+    setUser({user_id})
     useEffect(() => {
         async function parseChats(user_id){
-            setUser({user_id})
             const chatsList = await getChats({user_id});
-            setChats(chatsList);
-            filterChats()
+            return chatsList
         }
 
-        parseChats(user_id)
+        parseChats(user_id).then((chatsList) => {setChats(chatsList)})
     });
+    filterChats()
     const chats = chatStorage((state => state.filteredChats));
     if (chats.length === 0) {
         return (<div className={styles.ChatDiv}>
