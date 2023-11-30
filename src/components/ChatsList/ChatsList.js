@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import styles from './ChatsList.module.css'
 import ChatCard from "./ChatCard/ChatCard";
 import {chatStorage} from "../../storages/ChatSearchStorage";
@@ -11,23 +11,30 @@ const ChatsList = () => {
     const setChats = chatStorage((state) => state.setChats);
     const setUser = messageStorage((state) => state.setUser);
     const filterChats = chatStorage((state) => state.filterChats)
-    useEffect(() => {
-        async function parseChats(user_id){
-            setUser({user_id})
-            const chatsList = await getChats({user_id});
-            setChats(chatsList);
-            filterChats()
-        }
-
-        parseChats(user_id)
-    }, [user_id, setChats, setUser, filterChats]);
+    // useEffect(() => {
+    //     async function parseChats(user_id){
+    //         setUser({user_id})
+    //         const chatsList = await getChats({user_id});
+    //         setChats(chatsList);
+    //         filterChats()
+    //     }
+    //
+    //     parseChats(user_id)
+    // }, [user_id, setChats, setUser, filterChats]);
+    async function parseChats(user_id){
+        setUser({user_id})
+        const chatsList = await getChats({user_id});
+        setChats(chatsList);
+        filterChats()
+    }
+    parseChats(user_id)
     const chats = chatStorage((state => state.filteredChats));
-    // if (chats.length === 0) {
-    //     return (<div className={styles.ChatDiv}>
-    //                 <h3 className={styles.h3}>Чаты</h3>
-    //                 <p>Идет загрузка</p>
-    //             </div>)
-    // }
+    if (chats.length === 0) {
+        return (<div className={styles.ChatDiv}>
+                    <h3 className={styles.h3}>Чаты</h3>
+                    <p>Идет загрузка</p>
+                </div>)
+    }
     try {
         return (
             <div className={styles.ChatDiv}>
