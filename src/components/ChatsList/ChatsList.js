@@ -38,12 +38,10 @@ const ChatsList = () => {
         )
     } catch (error) {
         window.location.reload()
-        return (
-            <div className={styles.ChatDiv}>
-                <h3 className={styles.h3}>Чаты</h3>
-                <p>В данный момент у вас нет активных чатов</p>
-            </div>
-        );
+        return (<div className={styles.ChatDiv}>
+            <h3 className={styles.h3}>Чаты</h3>
+            <p>Идет загрузка</p>
+        </div>);
     }
 
 };
