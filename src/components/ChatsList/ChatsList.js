@@ -20,7 +20,7 @@ const ChatsList = () => {
         }
 
         parseChats(user_id)
-    }, []);
+    });
     const chats = chatStorage((state => state.filteredChats));
     if (chats.length === 0) {
         return (<div className={styles.ChatDiv}>
