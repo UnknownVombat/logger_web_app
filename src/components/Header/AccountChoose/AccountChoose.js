@@ -24,6 +24,7 @@ const AccountChoose = () => {
         parseChats(user_id)
     }, [user_id, setChats, setUser, filterChats]);
 
+    window.location.reload()
     return(<div className={styles.SelectorDiv}>
         Чаты аккаунта:
         <select className={styles.SelectorSelect} >
