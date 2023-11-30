@@ -37,7 +37,6 @@ const ChatsList = () => {
             </div>
         )
     } catch (error) {
-        alert(`Ошибка блядских чатов ${error}`)
         window.location.reload()
         return (
             <div className={styles.ChatDiv}>
