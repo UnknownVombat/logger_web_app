@@ -15,13 +15,13 @@ const AccountChoose = () => {
     const setChats = chatStorage((state) => state.setChats);
     useEffect(() => {
         async function parseChats(user_id){
-            setUser({user_id})
             const chatsList = await getChats({user_id});
             setChats(chatsList);
-            filterChats()
         }
 
+        setUser({user_id})
         parseChats(user_id)
+        filterChats()
     }, [user_id, setChats, setUser, filterChats]);
 
     return(<div className={styles.SelectorDiv}>
