@@ -8,19 +8,28 @@ import {messageStorage} from "../../storages/MessagesStorage";
 const ChatsList = () => {
     const wa = window.Telegram.WebApp;
     const user_id = wa.initDataUnsafe?.user?.id;
+    useEffect(() => {
+        async function parseChats(user_id){
+
+            const chatsList = await getChats({user_id});
+            setChats(chatsList);
+
+        }
+
+        parseChats(user_id)
+    });
     const setChats = chatStorage((state) => state.setChats);
     const setUser = messageStorage((state) => state.setUser);
     const filterChats = chatStorage((state) => state.filterChats)
-    setUser({user_id})
-    useEffect(() => {
-        async function parseChats(user_id){
-            const chatsList = await getChats({user_id});
-            return chatsList
-        }
+    // const [readyChats, setReadyChats] = useState([]);
 
-        parseChats(user_id).then((chatsList) => setChats(chatsList))
-    });
+    // useEffect(() => {
+    //     if (chats.length !== 0) {
+    //         setReadyChats(chats)
+    //     }
+    // }, [chats]);
     filterChats()
+    setUser({user_id})
     const chats = chatStorage((state => state.filteredChats));
     if (chats.length === 0) {
         return (<div className={styles.ChatDiv}>
