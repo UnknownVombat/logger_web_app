@@ -22,12 +22,12 @@ const ChatsList = () => {
         parseChats(user_id)
     }, [user_id, setChats, setUser, filterChats]);
     const chats = chatStorage((state => state.filteredChats));
-    if (chats.length === 0) {
-        return (<div className={styles.ChatDiv}>
-                    <h3 className={styles.h3}>Чаты</h3>
-                    <p>Идет загрузка</p>
-                </div>)
-    }
+    // if (chats.length === 0) {
+    //     return (<div className={styles.ChatDiv}>
+    //                 <h3 className={styles.h3}>Чаты</h3>
+    //                 <p>Идет загрузка</p>
+    //             </div>)
+    // }
     try {
         return (
             <div className={styles.ChatDiv}>
