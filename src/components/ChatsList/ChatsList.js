@@ -29,7 +29,6 @@ const ChatsList = () => {
                     <p>Идет загрузка</p>
                 </div>)
     }
-    window.location.reload()
     try {
         return (
             <div className={styles.ChatDiv}>
@@ -39,6 +38,7 @@ const ChatsList = () => {
         )
     } catch (error) {
         alert(`Ошибка блядских чатов ${error}`)
+        window.location.reload()
         return (
             <div className={styles.ChatDiv}>
                 <h3 className={styles.h3}>Чаты</h3>
