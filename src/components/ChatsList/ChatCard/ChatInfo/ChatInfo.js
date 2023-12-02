@@ -7,8 +7,24 @@ const ChatInfo = ({chat}) => {
     if (day < 10) {
         day = '0' + day
     }
-    const newDate = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds() + ' ' + day +
-        '.' + (date.getMonth() + 1) + '.' + date.getFullYear()
+    let hour = date.getHours()
+    if (hour < 10) {
+        hour = '0' + hour
+    }
+    let minute = date.getMinutes()
+    if (minute < 10) {
+        minute = '0' + minute
+    }
+    let seconds = date.getSeconds()
+    if (seconds < 10) {
+        seconds = '0' + seconds
+    }
+    let month = date.getMonth() + 1
+    if (month < 10) {
+        month = '0' + month
+    }
+    const newDate = hour + ':' + minute + ':' + seconds + ' ' + day +
+        '.' + month + '.' + date.getFullYear()
     return (
         <div key={chat.chat_id} className={styles.CardDiv}>
             <p>Пользователь: {chat.name}</p>
