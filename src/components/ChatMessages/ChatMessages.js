@@ -27,7 +27,7 @@ const ChatMessages = () => {
     }
     try{return (
         <div className={styles.ChatMessagesDiv}>
-            <ChatMessagesHeader chat_id={chat_id} name={name}/>
+            <ChatMessagesHeader props={{chat_id: chat_id, name: name}}/>
             <MessagesDiv />
         </div>
     )} catch {return (<div className={styles.h3}>Чат не найден</div>)}

@@ -4,12 +4,12 @@ import HeaderText from "./HeaderText/HeaderText";
 import HeaderButton from "./HeaderButton/HeaderButton";
 import RefreshButton from "./RefreshButton/RefreshButton";
 
-const ChatMessagesHeader = (name, chat_id) => {
+const ChatMessagesHeader = (props) => {
     return (
         <div className={styles.headerDiv}>
             <HeaderButton />
-            <HeaderText name={name}/>
-            <RefreshButton chat_id={chat_id}/>
+            <HeaderText name={props.name}/>
+            <RefreshButton chat_id={props.chat_id}/>
         </div>
     );
 };
