@@ -6,8 +6,8 @@ import {Link} from 'react-router-dom'
 import {messageStorage} from "../../../storages/MessagesStorage";
 
 const ChatCard = (chat) => {
-    const setName = messageStorage((state) => state.setName);
-    setName(chat.name);
+    // const setName = messageStorage((state) => state.setName);
+    // setName(chat.name);
     return (<Link to={`/messages/${chat.telegramId}`} className={styles.CardLink}>
             <div className={styles.CardDiv} key={chat.telegramId}>
                 <ChatPhoto chat={chat}/>
