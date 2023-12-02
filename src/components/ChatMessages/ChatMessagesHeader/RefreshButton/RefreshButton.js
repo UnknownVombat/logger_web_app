@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 
 
 const RefreshButton = ({chat_id}) => {
-    console.log(chat_id)
+    window.location.reload()
     return (
         <NavLink to={`/messages/${chat_id[0]}/${chat_id[1]}`} className={styles.CardLink}>
             <box-icon name='refresh' color='var(--tg-theme-text-color)'></box-icon>
