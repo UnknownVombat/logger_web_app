@@ -12,6 +12,7 @@ const ChatMessages = () => {
     const user_id = userid.user_id;
     const setMessages = messageStorage((state) => state.setMessages);
     const revokeMessages = messageStorage((state) => state.revokeMessages)
+    console.log(`Юзерь айди и чат айди ${user_id} ${chat_id}`)
     useEffect(() => {
         async function parseMess(user_id, chat_id) {
             const mess = await getMessages(user_id, chat_id);
