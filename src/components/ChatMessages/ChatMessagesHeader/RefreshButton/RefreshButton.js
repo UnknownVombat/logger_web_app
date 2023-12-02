@@ -1,16 +1,18 @@
 import React from 'react';
 import styles from "./RefreshButton.module.css";
-import {getMessages} from "../../../../Requests";
+
+import ChatMessages from "../../ChatMessages";
 
 
-// function makeRequest(chat_id){
-//     console.log('Делаем запрос для чата', chat_id)
-// }
+function refresh(){
+    return (<div>
+        <ChatMessages />
+    </div>)
+}
 
-const RefreshButton = ({chat_id}) => {
-    const user_id = window.Telegram.WebApp.initDataUnsafe?.user?.id
+const RefreshButton = () => {
     return (
-        <div className={styles.buttonDiv} onClick={() => getMessages(user_id, chat_id)}>
+        <div className={styles.buttonDiv} onClick={() => refresh()}>
             <box-icon name='refresh' color='var(--tg-theme-text-color)'></box-icon>
         </div>
     );
