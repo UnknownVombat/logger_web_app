@@ -10,7 +10,7 @@ const ChatMessagesHeader = ({props}) => {
         <div className={styles.headerDiv}>
             <HeaderButton />
             <HeaderText name={props[1]}/>
-            <RefreshButton chat_id={props[0]}/>
+            <RefreshButton />
         </div>
     );
 };
