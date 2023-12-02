@@ -7,9 +7,11 @@ import {messageStorage} from "../../storages/MessagesStorage";
 import {getMessages} from "../../Requests";
 
 const ChatMessages = () => {
-    const {chat_id} = useParams();
+    const {chat_id, chat_name} = useParams();
     const userid = messageStorage((state) => state.user_id);
     const user_id = userid.user_id;
+    const setName = messageStorage((state) => state.setName);
+    setName(chat_name);
     const name = messageStorage((state) => state.name);
     const setMessages = messageStorage((state) => state.setMessages);
     const revokeMessages = messageStorage((state) => state.revokeMessages)

@@ -29,20 +29,13 @@ const ChatsList = () => {
                     <p>Нет результатов</p>
                 </div>)
     }
-    try {
-        return (
-            <div className={styles.ChatDiv}>
-                <h3 className={styles.h3}>Чаты</h3>
-                {chats.map((chat) => {return ChatCard(chat)})}
-            </div>
-        )
-    } catch (error) {
-        window.location.reload()
-        return (<div className={styles.ChatDiv}>
+    return (
+        <div className={styles.ChatDiv}>
             <h3 className={styles.h3}>Чаты</h3>
-            <p>Идет загрузка</p>
-        </div>);
-    }
+            {chats.map((chat) => {return ChatCard(chat)})}
+        </div>
+    )
+
 
 };
 
