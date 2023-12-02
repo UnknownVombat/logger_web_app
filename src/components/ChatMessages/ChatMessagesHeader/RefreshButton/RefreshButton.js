@@ -1,20 +1,13 @@
 import React from 'react';
 import styles from "./RefreshButton.module.css";
+import {NavLink} from "react-router-dom";
 
-import ChatMessages from "../../ChatMessages";
 
-
-function refresh(){
-    return (<div>
-        <ChatMessages />
-    </div>)
-}
-
-const RefreshButton = () => {
+const RefreshButton = ({props}) => {
     return (
-        <div className={styles.buttonDiv} onClick={() => refresh()}>
+        <NavLink to={`/messages/${props[0]}/${props[1]}`} className={styles.CardLink}>
             <box-icon name='refresh' color='var(--tg-theme-text-color)'></box-icon>
-        </div>
+        </NavLink>
     );
 };
 
