@@ -3,7 +3,7 @@ import styles from './ChatCard.module.css'
 import ChatPhoto from "./ChatPhoto/ChatPhoto";
 import ChatInfo from "./ChatInfo/ChatInfo";
 import {Link} from 'react-router-dom'
-import {messageStorage} from "../../../storages/MessagesStorage";
+// import {messageStorage} from "../../../storages/MessagesStorage";
 
 const ChatCard = (chat) => {
     // const setName = messageStorage((state) => state.setName);
