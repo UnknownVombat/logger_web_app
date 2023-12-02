@@ -4,6 +4,8 @@ import {messageStorage} from "../../../storages/MessagesStorage";
 
 const MessageCard = (message) => {
     const user_id = messageStorage((state) => state.user_id)
+    console.log(user_id)
+    console.log(message.senderId)
     const from = (message.senderId === user_id ? 'user': 'opponent')
     const cl = {'user': styles.MessageDivUser, 'opponent': styles.MessageDivOpponent}
     const date = new Date(message.time)

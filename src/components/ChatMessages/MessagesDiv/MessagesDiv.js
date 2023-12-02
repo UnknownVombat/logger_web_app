@@ -5,19 +5,14 @@ import {messageStorage} from "../../../storages/MessagesStorage";
 
 const MessagesDiv = () => {
     const messages = messageStorage((state) => state.messages)
-
-    if (messages.length > 0){
+    try {
         return (
             <div className={styles.MessagesDiv}>
                 {messages.map((message) => {return MessageCard(message)})}
             </div>
         );
-    } else {
-        return (
-            <div className={styles.MessagesDiv}>
-                <p>Нет сообщений</p>
-            </div>
-        );
+    } catch (error) {
+        window.location.reload()
     }
 
 };
