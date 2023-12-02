@@ -9,8 +9,8 @@ const ChatMessagesHeader = ({props}) => {
     return (
         <div className={styles.headerDiv}>
             <HeaderButton />
-            <HeaderText name={props[0]}/>
-            <RefreshButton chat_id={props[1]}/>
+            <HeaderText name={props[1]}/>
+            <RefreshButton chat_id={props[0]}/>
         </div>
     );
 };
