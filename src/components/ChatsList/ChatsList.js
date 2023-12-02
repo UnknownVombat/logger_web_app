@@ -37,6 +37,7 @@ const ChatsList = () => {
             </div>
         )
     } catch (error) {
+        alert(error)
         window.location.reload()
         return (<div className={styles.ChatDiv}>
             <h3 className={styles.h3}>Чаты</h3>
