@@ -16,7 +16,7 @@ function App() {
             <Routes>
                 <Route path='/' element={<Layout />}>
                     <Route index element={<ChatsList />}/>
-                    <Route path='messages/:chat_id/:name' element={<ChatMessages />}/>
+                    <Route path='messages/:chat_id' element={<ChatMessages />}/>
                     <Route path='*' element={<ChatsList />}/>
                 </Route>
             </Routes>
