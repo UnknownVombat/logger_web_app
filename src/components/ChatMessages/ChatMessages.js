@@ -8,7 +8,7 @@ import {getMessages} from "../../Requests";
 
 const ChatMessages = () => {
     const {chat_id, name} = useParams();
-    const user_id = window.Telegram.WebApp.initDataUnsafe?.user?.user_id
+    const user_id = window.Telegram.WebApp.initDataUnsafe?.user?.id
     const setMessages = messageStorage((state) => state.setMessages);
     console.log(`Юзерь айди и чат айди ${user_id} ${chat_id}`)
     useEffect(() => {
