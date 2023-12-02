@@ -1,10 +1,8 @@
 import React from 'react';
 import styles from './MessageCard.module.css'
-import {messageStorage} from "../../../storages/MessagesStorage";
 
 const MessageCard = (message) => {
-    const user_id = messageStorage((state) => state.user_id)
-    const from = (message.senderId === user_id.user_id ? 'user': 'opponent')
+    const from = (message.senderId === message.botId? 'user': 'opponent')
     const cl = {'user': styles.MessageDivUser, 'opponent': styles.MessageDivOpponent}
     const date = new Date(message.time)
     let day = date.getDate()

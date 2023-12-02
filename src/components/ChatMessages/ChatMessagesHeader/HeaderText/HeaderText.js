@@ -1,12 +1,10 @@
 import React from 'react';
 import styles from "./HeaderText.module.css";
-import {messageStorage} from "../../../../storages/MessagesStorage";
 
-const HeaderText = () => {
-    const name = messageStorage((state) => state.name)
+const HeaderText = (name) => {
     return (
         <div className={styles.textDiv}>
-            <h3 className={styles.text}>Диалог с пользователем {name}</h3>
+            <h3 className={styles.text}>Диалог с пользователем {name.name}</h3>
         </div>
     );
 };
