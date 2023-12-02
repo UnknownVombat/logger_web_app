@@ -13,16 +13,21 @@ const ChatsList = () => {
     const setUser = messageStorage((state) => state.setUser);
     const filterChats = chatStorage((state) => state.filterChats)
     const setChats = chatStorage((state) => state.setChats);
-    useEffect(() => {
-        async function parseChats(user_id){
-            const chatsList = await getChats({user_id});
-            setChats(chatsList);
-            filterChats()
-        }
+    try{
+        useEffect(() => {
+            async function parseChats(user_id){
+                const chatsList = await getChats({user_id});
+                setChats(chatsList);
+                filterChats()
+            }
 
-        setUser({user_id})
-        parseChats(user_id)
-    }, [user_id, setChats, setUser, filterChats]);
+            setUser({user_id})
+            parseChats(user_id)
+        }, [user_id, setChats, setUser, filterChats]);
+    }
+    catch (error) {
+        alert(error)
+    }
     if (chats.length === 0) {
         return (<div className={styles.ChatDiv}>
                     <h3 className={styles.h3}>Чаты</h3>
