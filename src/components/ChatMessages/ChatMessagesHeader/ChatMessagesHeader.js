@@ -5,11 +5,12 @@ import HeaderButton from "./HeaderButton/HeaderButton";
 import RefreshButton from "./RefreshButton/RefreshButton";
 
 const ChatMessagesHeader = (props) => {
+    console.log(props)
     return (
         <div className={styles.headerDiv}>
             <HeaderButton />
-            <HeaderText name={props.name}/>
-            <RefreshButton chat_id={props.chat_id}/>
+            <HeaderText name={props[0]}/>
+            <RefreshButton chat_id={props[1]}/>
         </div>
     );
 };
