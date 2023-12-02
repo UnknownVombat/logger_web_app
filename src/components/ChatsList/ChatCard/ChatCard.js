@@ -5,7 +5,7 @@ import ChatInfo from "./ChatInfo/ChatInfo";
 import {Link} from 'react-router-dom'
 
 const ChatCard = (chat) => {
-    return (<Link to={`/messages/${chat.telegramId}/${chat.name}`} className={styles.CardLink}>
+    return (<Link to={`/messages/${chat.telegramId}`} className={styles.CardLink}>
             <div className={styles.CardDiv} key={chat.telegramId}>
                 <ChatPhoto chat={chat}/>
                 <ChatInfo chat={chat}/>
