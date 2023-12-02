@@ -9,6 +9,7 @@
     margin: 6px auto 6px 6px;
     padding: 6px;
     background-color: #65BCFA;
+    border-radius: 5px;
 }
 
 .MessageDivOpponent {
@@ -22,4 +23,9 @@
     margin: 6px 6px 6px auto;
     padding: 6px;
     background-color: #1B3DFA;
+    border-radius: 5px;
+}
+
+.time {
+    font-size: 14px;
 }
