@@ -1,13 +1,13 @@
 import React from 'react';
 import 'boxicons'
 import styles from './HeaderButton.module.css'
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 const HeaderButton = () => {
     return (
-        <Link to='/' className={styles.buttonDiv}>
+        <NavLink to='/' className={styles.buttonDiv}>
             <box-icon name='left-arrow-alt' color='var(--tg-theme-text-color)'></box-icon>
-        </Link>
+        </NavLink>
     );
 };
 
