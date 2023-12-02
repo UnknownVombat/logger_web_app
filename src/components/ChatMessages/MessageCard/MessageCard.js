@@ -7,8 +7,12 @@ const MessageCard = (message) => {
     const from = (message.senderId === user_id ? 'user': 'opponent')
     const cl = {'user': styles.MessageDivUser, 'opponent': styles.MessageDivOpponent}
     const date = new Date(message.time)
-    const newDate = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds() + ' ' + date.getDay() +
-        '.' + date.getMonth() + '.' + date.getFullYear()
+    let day = date.getDate()
+    if (day < 10) {
+        day = '0' + day
+    }
+    const newDate = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds() + ' ' + day +
+        '.' + (date.getMonth() + 1) + '.' + date.getFullYear()
     return (
         <div className={cl[from]} key={message.id}>
             {message?.img ? <img src={message.img} alt=''/>: null}
