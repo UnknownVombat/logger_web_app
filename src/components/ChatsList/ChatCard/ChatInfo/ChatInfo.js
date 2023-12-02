@@ -14,7 +14,7 @@ const ChatInfo = ({chat}) => {
             <p>Пользователь: {chat.name}</p>
             <p>TelegramID: {chat.telegramId}</p>
             <p>Username: {chat.username}</p>
-            <p>Last recent message: {newDate}</p>
+            <p>Последнее сообщение: {newDate}</p>
         </div>
     );
 };
