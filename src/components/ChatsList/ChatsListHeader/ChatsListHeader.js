@@ -5,7 +5,7 @@ import styles from './ChatsListHeader.module.css'
 
 const ChatsListHeader = () => {
     return (
-        <div style={styles.headerDiv}>
+        <div className={styles.headerDiv}>
             <HeaderText />
             <ChatRefreshButton />
         </div>
