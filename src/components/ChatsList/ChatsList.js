@@ -3,6 +3,7 @@ import styles from './ChatsList.module.css'
 import ChatCard from "./ChatCard/ChatCard";
 import {chatStorage} from "../../storages/ChatSearchStorage";
 import {getChats} from "../../Requests";
+import ChatsListHeader from "./ChatsListHeader/ChatsListHeader";
 
 const ChatsList = () => {
     // const user_id = 530472030
@@ -28,7 +29,7 @@ const ChatsList = () => {
     }
     return (
         <div className={styles.ChatDiv}>
-            <h3 className={styles.h3}>Чаты</h3>
+            <ChatsListHeader />
             {chats.map((chat) => {return ChatCard(chat)})}
         </div>
     )
