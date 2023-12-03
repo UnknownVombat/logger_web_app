@@ -1,13 +1,13 @@
 import React from 'react';
-import HeaderText from "./ChatHeaderText/HeaderText";
-import RefreshButton from "./ChatHeaderRefresh/RefreshButton";
+import HeaderText from "./ChatHeaderText/ChatHeaderText";
+import ChatRefreshButton from "./ChatHeaderRefresh/ChatRefreshButton";
 import styles from './ChatsListHeader.module.css'
 
 const ChatsListHeader = () => {
     return (
         <div style={styles.headerDiv}>
             <HeaderText />
-            <RefreshButton />
+            <ChatRefreshButton />
         </div>
     );
 };

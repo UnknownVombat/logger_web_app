@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./HeaderText.module.css";
+import styles from "./ChatHeaderText.module.css";
 
 const ChatHeaderText = () => {
     return (

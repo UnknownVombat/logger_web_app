@@ -2,10 +2,10 @@ import React from 'react';
 import {getChats} from "../../../../Requests";
 import {chatStorage} from "../../../../storages/ChatSearchStorage";
 import {NavLink} from "react-router-dom";
-import styles from "./RefreshButton.module.css";
+import styles from "./ChatRefreshButton.module.css";
 
 
-const RefreshButton = () => {
+const ChatRefreshButton = () => {
     const user_id = window.Telegram.WebApp.initDataUnsafe?.user?.id;
     const filterChats = chatStorage((state) => state.filterChats)
     const setChats = chatStorage((state) => state.setChats);
@@ -22,4 +22,4 @@ const RefreshButton = () => {
     );
 };
 
-export default RefreshButton;
+export default ChatRefreshButton;
