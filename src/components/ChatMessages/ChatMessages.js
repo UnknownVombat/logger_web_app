@@ -30,7 +30,11 @@ const ChatMessages = () => {
             <ChatMessagesHeader props={[chat_id, name]}/>
             <MessagesDiv />
         </div>
-    )} catch {return (<div className={styles.h3}>Чат не найден</div>)}
+    )} catch {return (
+        <div className={styles.h3}>
+            <ChatMessagesHeader props={[chat_id, name]}/>
+            <p>Чат не найден</p>
+        </div>)}
 
 };
 
