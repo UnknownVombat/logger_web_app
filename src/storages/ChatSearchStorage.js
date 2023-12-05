@@ -11,7 +11,7 @@ export const chatStorage = create(
         filterChats: () => set((state) => (
             {filteredChats: state.searchText === 'Поиск' ? state.chats: state.chats.filter((chat) =>
                     chat.telegramId.toString().includes(state.searchText) || chat.username.toLowerCase().includes(state.searchText)
-                    || chat.name.includes(state.searchText)
+                    || chat.name.toLowerCase().includes(state.searchText)
                 )})
             )
         ,
