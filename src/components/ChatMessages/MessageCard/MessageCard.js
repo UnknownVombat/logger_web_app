@@ -29,7 +29,7 @@ const MessageCard = (message) => {
         '.' + month + '.' + date.getFullYear()
     return (
         <div className={cl[from]} key={message.id}>
-            {message?.img ? <img src={message.img} alt=''/>: null}
+            {message?.img ? <img src={`data:image/png;base64, ${message.img}`} alt='Red dot'/>: null}
             {message?.text ? <p>{message.text}</p>: null}
             <p className={styles.time}>{newDate}</p>
         </div>
