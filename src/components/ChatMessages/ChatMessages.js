@@ -22,6 +22,7 @@ const ChatMessages = () => {
     const messages = messageStorage((state) => state.messages)
     if (messages.length === 0){
         return (<div className={styles.MessagesDiv}>
+                    <ChatMessagesHeader props={[chat_id, name]}/>
                     <p>Идет загрузка</p>
                 </div>)
     }
