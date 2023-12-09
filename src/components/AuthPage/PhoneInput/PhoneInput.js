@@ -35,7 +35,7 @@ const PhoneInput = ({dis}) => {
     return (
         <div>
             <p>Введите номер телефона: </p>
-            <form onSubmit={() => validateNumber(this.value)}>
+            <form onSubmit={() => validateNumber(this)}>
                 <input type='text' disabled={dis} placeholder={phonePH}/>
             </form>
         </div>
