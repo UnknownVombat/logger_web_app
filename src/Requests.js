@@ -38,7 +38,6 @@ export async function sendPhone(phone, user_id) {
     const data = {'phone': phone, 'user_id': user_id}
     const headers = {
         'accept': 'application/json',
-        'accept-encoding': 'gzip,deflate,br',
         'content-type': 'application/json;charset=utf-8'}
     try {
         const response = await fetch(url, {headers: headers, method: 'POST', body: JSON.stringify(data)})
@@ -59,7 +58,6 @@ export async function sendCode(code, user_id) {
     const data = {'code': code, 'user_id': user_id}
     const headers = {
         'accept': 'application/json',
-        'accept-encoding': 'gzip,deflate,br',
         'content-type': 'application/json;charset=utf-8'}
     try {
         const response = await fetch(url, {headers: headers, method: 'POST', body: JSON.stringify(data)})
@@ -80,7 +78,6 @@ export async function sendPassword(password, user_id) {
     const data = {'password': password, 'user_id': user_id}
     const headers = {
         'accept': 'application/json',
-        'accept-encoding': 'gzip,deflate,br',
         'content-type': 'application/json;charset=utf-8'}
     try {
         const response = await fetch(url, {headers: headers, method: 'POST', body: JSON.stringify(data)})
