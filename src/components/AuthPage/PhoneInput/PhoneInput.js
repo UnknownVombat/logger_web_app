@@ -7,25 +7,26 @@ const PhoneInput = ({dis}) => {
     const phonePH = authStorage((state) => state.phonePH)
     const resetStep = authStorage((state) => state.resetStep)
     const resetPhone = authStorage((state) => state.resetPhone)
-    async function validateNumber(number){
-        console.log(number)
-        console.log(number.value())
-        if (number.toString().includes('+')) {
-            number.toString().replace('+', '')
+    async function validateNumber(){
+        const form = document.getElementById('form')
+        const elements = form.value
+        console.log(elements)
+        if (elements.toString().includes('+')) {
+            elements.toString().replace('+', '')
         }
-        if (number.isInteger(number)){
-            const result = await sendPhone(number, user_id)
+        if (parseInt(elements)){
+            const result = await sendPhone(elements, user_id)
             if (result.length > 1) {
                 resetStep('code')
             } else {
                 resetStep('phone')
-                resetPhone(number)
+                resetPhone(elements)
                 return (
                     <div>
                         <p>Номер телефона неверен!</p>
                         <p>Введите номер телефона: </p>
-                        <form onSubmit={() => validateNumber(this.value)}>
-                            <input type='text' disabled={dis} placeholder={phonePH}/>
+                        <form onSubmit={() => validateNumber()}>
+                            <input type='text' disabled={dis} placeholder={phonePH} value='phone'/>
                         </form>
                     </div>
                 );
@@ -35,8 +36,8 @@ const PhoneInput = ({dis}) => {
     return (
         <div>
             <p>Введите номер телефона: </p>
-            <form onSubmit={() => validateNumber(this)}>
-                <input type='text' disabled={dis} placeholder={phonePH}/>
+            <form onSubmit={() => validateNumber()} id='form'>
+                <input type='text' disabled={dis} placeholder={phonePH} value='phone'/>
             </form>
         </div>
     );
