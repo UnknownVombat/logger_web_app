@@ -3,10 +3,11 @@
     flex-direction: column;
     height: 60vh;
     width: 60%;
-    margin: 20vh 20%;
+    margin: 10vh 20% auto auto;
     padding: 8px;
     background-color: var(--tg-theme-secondary-bg-color);
     border-radius: 10px;
+    text-align: center;
 }
 
 .link {
