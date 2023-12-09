@@ -1,6 +1,5 @@
 import React from "react";
 import styles from './AccountChoose.module.css';
-import {NavLink} from "react-router-dom";
 
 
 const AccountChoose = () => {
@@ -13,7 +12,6 @@ const AccountChoose = () => {
         <select className={styles.SelectorSelect} >
             {/*<option key={defaultAcc} onClick={() => {accChange(defaultAcc)}}>{defaultAcc}</option>*/}
             {accs.map((acc) => {return <option key={acc}>{acc}</option>})}
-            <option key='NewAcc'><NavLink to={'/auth'}>Новый аккаунт</NavLink></option>
         </select>
     </div>)
 }
