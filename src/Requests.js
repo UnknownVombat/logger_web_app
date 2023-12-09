@@ -36,8 +36,12 @@ export async function sendPhone(phone, user_id) {
     const point = '/send_phone'
     const url = baseUrl + point
     const data = {'phone': phone, 'user_id': user_id}
+    const headers = {
+        'accept': 'application/json',
+        'accept-encoding': 'gzip,deflate,br',
+        'content-type': 'application/json;charset=utf-8'}
     try {
-        const response = await fetch(url, {method: 'POST', body: JSON.stringify(data)})
+        const response = await fetch(url, {headers: headers, method: 'POST', body: JSON.stringify(data)})
         if (!response.ok){
             throw new Error('Ошибка отправки номера телефона: ' + response.statusCode)
         }
@@ -53,8 +57,12 @@ export async function sendCode(code, user_id) {
     const point = '/send_code'
     const url = baseUrl + point
     const data = {'code': code, 'user_id': user_id}
+    const headers = {
+        'accept': 'application/json',
+        'accept-encoding': 'gzip,deflate,br',
+        'content-type': 'application/json;charset=utf-8'}
     try {
-        const response = await fetch(url, {method: 'POST', body: JSON.stringify(data)})
+        const response = await fetch(url, {headers: headers, method: 'POST', body: JSON.stringify(data)})
         if (!response.ok){
             throw new Error('Ошибка отправки кода: ' + response.statusCode)
         }
@@ -70,8 +78,12 @@ export async function sendPassword(password, user_id) {
     const point = '/send_password'
     const url = baseUrl + point
     const data = {'password': password, 'user_id': user_id}
+    const headers = {
+        'accept': 'application/json',
+        'accept-encoding': 'gzip,deflate,br',
+        'content-type': 'application/json;charset=utf-8'}
     try {
-        const response = await fetch(url, {method: 'POST', body: JSON.stringify(data)})
+        const response = await fetch(url, {headers: headers, method: 'POST', body: JSON.stringify(data)})
         if (!response.ok){
             throw new Error('Ошибка отправки кода: ' + response.statusCode)
         }
