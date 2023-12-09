@@ -7,10 +7,10 @@ const PhoneInput = ({dis}) => {
     const phonePH = authStorage((state) => state.phonePH)
     const resetStep = authStorage((state) => state.resetStep)
     const resetPhone = authStorage((state) => state.resetPhone)
+    const step = authStorage((state) => state.step)
     async function validateNumber(){
-        const form = document.getElementById('form')
+        const form = document.getElementById('phone_input')
         const elements = form.value
-        console.log(elements)
         if (elements.toString().includes('+')) {
             elements.toString().replace('+', '')
         }
@@ -25,22 +25,30 @@ const PhoneInput = ({dis}) => {
                     <div>
                         <p>Номер телефона неверен!</p>
                         <p>Введите номер телефона: </p>
-                        <form onSubmit={() => validateNumber()}>
-                            <input type='text' disabled={dis} placeholder={phonePH} name='phone'/>
-                        </form>
+                        <input type='text' disabled={dis} placeholder={phonePH} id='phone_input'/>
+                        <button onClick={() => validateNumber()}>Получить код</button>
                     </div>
                 );
             }
         }
     }
-    return (
-        <div>
-            <p>Введите номер телефона: </p>
-            <form onSubmit={() => validateNumber()} id='form'>
-                <input type='text' disabled={dis} placeholder={phonePH} name='phone'/>
-            </form>
-        </div>
-    );
+    if(step === 'phone'){
+        return (
+            <div>
+                <p>Введите номер телефона: </p>
+                <input type='text' disabled={dis} placeholder={phonePH} id='phone_input'/>
+                <button onClick={() => validateNumber()}>Получить код</button>
+            </div>
+        );
+    } else {
+        return (
+            <div>
+                <p>Введите номер телефона: </p>
+                <input type='text' disabled={dis} placeholder={phonePH} id='phone_input'/>
+            </div>
+        );
+    }
+
 };
 
 export default PhoneInput;

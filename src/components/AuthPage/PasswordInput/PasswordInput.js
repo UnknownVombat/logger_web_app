@@ -5,6 +5,7 @@ import {sendPassword} from "../../../Requests";
 const PasswordInput = ({dis}) => {
     const user_id = window.Telegram.WebApp.initDataUnsafe?.user?.id
     const resetStep = authStorage((state) => state.resetStep)
+    const step = authStorage((state) => state.step)
     async function sendPasswd(password){
         const result = await sendPassword(password, user_id)
         if (result[0] === true) {
@@ -15,21 +16,29 @@ const PasswordInput = ({dis}) => {
                 <div>
                     <p>Пароль неверен!</p>
                     <p>Введите пароль: </p>
-                    <form onSubmit={() => sendPasswd(this.value)}>
-                        <input type='password' disabled={dis}/>
-                    </form>
+                    <input type='password' disabled={dis} id='password_input'/>
+                    <button onClick={() => sendPasswd()}>Проверить пароль</button>
                 </div>
             );
         }
     }
-    return (
-        <div>
-            <p>Введите пароль: </p>
-            <form onSubmit={() => sendPasswd(this.value)}>
-                <input type='password' disabled={dis}/>
-            </form>
-        </div>
-    );
+    if (step === 'password'){
+        return (
+            <div>
+                <p>Введите пароль: </p>
+                <input type='password' disabled={dis} id='password_input'/>
+                <button onClick={() => sendPasswd()}>Проверить пароль</button>
+            </div>
+        );
+    } else {
+        return (
+            <div>
+                <p>Введите пароль: </p>
+                <input type='password' disabled={dis} id='password_input'/>
+            </div>
+        );
+    }
+
 };
 
 export default PasswordInput;

@@ -5,8 +5,11 @@ import {sendCode} from "../../../Requests";
 const CodeInput = ({dis}) => {
     const user_id = window.Telegram.WebApp.initDataUnsafe?.user?.id
     const resetStep = authStorage((state) => state.resetStep)
-    async function validateCode(code){
-        if (code.isInteger(code)){
+    const step = authStorage((state) => state.step)
+    async function validateCode(){
+        const codeInput = document.getElementById('code_input')
+        const code = codeInput.value
+        if (parseInt(code)){
             const result = await sendCode(code, user_id)
             if (result[0] === true && result[1] === true) {
                 resetStep('ready')
@@ -18,22 +21,30 @@ const CodeInput = ({dis}) => {
                     <div>
                         <p>Код неверен!</p>
                         <p>Введите код: </p>
-                        <form onSubmit={() => validateCode(this.value)}>
-                            <input type='text' disabled={dis}/>
-                        </form>
+                        <input type='text' id='code_input' disabled={dis}/>
+                        <button onClick={() => validateCode()}>Проверить код</button>
                     </div>
                 );
             }
         }
     }
-    return (
-        <div>
-            <p>Введите код: </p>
-            <form onSubmit={() => validateCode(this.value)}>
-                <input type='text' disabled={dis}/>
-            </form>
-        </div>
-    );
+    if (step === 'code'){
+        return (
+            <div>
+                <p>Введите код: </p>
+                <input type='text' id='code_input' disabled={dis}/>
+                <button onClick={() => validateCode()}>Проверить код</button>
+            </div>
+        );
+    } else{
+        return (
+            <div>
+                <p>Введите код: </p>
+                <input type='text' id='code_input' disabled={dis}/>
+            </div>
+        );
+    }
+
 };
 
 export default CodeInput;
