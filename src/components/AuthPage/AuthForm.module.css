@@ -5,6 +5,8 @@
     width: 60%;
     margin: 20vh 20%;
     padding: 8px;
+    background-color: var(--tg-theme-secondary-bg-color);
+    border-radius: 10px;
 }
 
 .link {
@@ -14,7 +16,7 @@
 input {
     border-radius: 10px;
     padding: 3px;
-    background-color: var(--tg-theme-secondary-bg-color);
+    background-color: var(--tg-theme-bg-color);
     color: var(--tg-theme-text-color);
     text-align: center;
     margin: 3px;
