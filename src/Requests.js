@@ -32,7 +32,7 @@ export async function getMessages(user_id, chat_id) {
 }
 
 export async function sendPhone(phone, user_id) {
-    const baseUrl = '127.0.0.1:8000'
+    const baseUrl = 'http://127.0.0.1:8000'
     const point = '/send_phone'
     const url = baseUrl + point
     const data = {'phone': phone, 'user_id': user_id}
@@ -49,7 +49,7 @@ export async function sendPhone(phone, user_id) {
 }
 
 export async function sendCode(code, user_id) {
-    const baseUrl = '127.0.0.1:8000'
+    const baseUrl = 'http://127.0.0.1:8000'
     const point = '/send_code'
     const url = baseUrl + point
     const data = {'code': code, 'user_id': user_id}
@@ -66,7 +66,7 @@ export async function sendCode(code, user_id) {
 }
 
 export async function sendPassword(password, user_id) {
-    const baseUrl = '127.0.0.1:8000'
+    const baseUrl = 'http://127.0.0.1:8000'
     const point = '/send_password'
     const url = baseUrl + point
     const data = {'password': password, 'user_id': user_id}

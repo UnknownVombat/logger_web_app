@@ -26,7 +26,7 @@ input {
 button {
     background-color: var(--tg-theme-button-color);
     color: var(--tg-theme-button-text-color);
-    padding: 3px;
+    padding: 3px 6px 3px 6px;
     margin: 3px;
     border-radius: 10px;
 }
