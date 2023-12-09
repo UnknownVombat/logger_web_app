@@ -1,0 +1,12 @@
+.authDiv {
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    width: 60%;
+    margin: 20vh 20%;
+    padding: 8px;
+}
+
+.link {
+    text-decoration: none;
+}

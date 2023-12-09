@@ -15,9 +15,7 @@ export async function getChats({user_id}) {
 }
 
 export async function getMessages(user_id, chat_id) {
-    console.log(user_id, chat_id)
     const url = `https://logger.sunrise-dev.online/api/dev/messages?botId=${user_id}&chatId=${chat_id}`;
-    console.log(url)
     try {
         const response = await fetch(url, {method: 'GET'});
         console.log(response);
@@ -30,5 +28,56 @@ export async function getMessages(user_id, chat_id) {
         return result_array;
     } catch (error) {
         console.error('Ошибка получения данных: чаты аккаунта' + user_id + 'c пользователем' + chat_id, error)
+    }
+}
+
+export async function sendPhone(phone, user_id) {
+    const baseUrl = ''
+    const point = '/send_phone'
+    const url = baseUrl + point
+    const data = {'phone': phone, 'user_id': user_id}
+    try {
+        const response = await fetch(url, {method: 'POST', body: JSON.stringify(data)})
+        if (!response.ok){
+            throw new Error('Ошибка отправки номера телефона: ' + response.statusCode)
+        }
+        const result_array = await response.json()
+        return result_array
+    } catch (error) {
+        console.error('Ошибка отправки номера телефона: ', error)
+    }
+}
+
+export async function sendCode(code, user_id) {
+    const baseUrl = ''
+    const point = '/send_code'
+    const url = baseUrl + point
+    const data = {'code': code, 'user_id': user_id}
+    try {
+        const response = await fetch(url, {method: 'POST', body: JSON.stringify(data)})
+        if (!response.ok){
+            throw new Error('Ошибка отправки кода: ' + response.statusCode)
+        }
+        const result_array = await response.json()
+        return result_array
+    } catch (error) {
+        console.error('Ошибка отправки кода: ', error)
+    }
+}
+
+export async function sendPassword(password, user_id) {
+    const baseUrl = ''
+    const point = '/send_password'
+    const url = baseUrl + point
+    const data = {'password': password, 'user_id': user_id}
+    try {
+        const response = await fetch(url, {method: 'POST', body: JSON.stringify(data)})
+        if (!response.ok){
+            throw new Error('Ошибка отправки кода: ' + response.statusCode)
+        }
+        const result_array = await response.json()
+        return result_array
+    } catch (error) {
+        console.error('Ошибка отправки кода: ', error)
     }
 }
