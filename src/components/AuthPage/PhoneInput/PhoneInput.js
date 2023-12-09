@@ -8,6 +8,8 @@ const PhoneInput = ({dis}) => {
     const resetStep = authStorage((state) => state.resetStep)
     const resetPhone = authStorage((state) => state.resetPhone)
     async function validateNumber(number){
+        console.log(number)
+        console.log(number.value())
         if (number.toString().includes('+')) {
             number.toString().replace('+', '')
         }
@@ -22,7 +24,9 @@ const PhoneInput = ({dis}) => {
                     <div>
                         <p>Номер телефона неверен!</p>
                         <p>Введите номер телефона: </p>
-                        <input type='text' disabled={dis} placeholder={phonePH} onInput={() => validateNumber(this.value)}/>
+                        <form onSubmit={() => validateNumber(this.value)}>
+                            <input type='text' disabled={dis} placeholder={phonePH}/>
+                        </form>
                     </div>
                 );
             }
@@ -31,7 +35,9 @@ const PhoneInput = ({dis}) => {
     return (
         <div>
             <p>Введите номер телефона: </p>
-            <input type='text' disabled={dis} placeholder={phonePH} onInput={() => validateNumber(this.value)}/>
+            <form onSubmit={() => validateNumber(this.value)}>
+                <input type='text' disabled={dis} placeholder={phonePH}/>
+            </form>
         </div>
     );
 };
