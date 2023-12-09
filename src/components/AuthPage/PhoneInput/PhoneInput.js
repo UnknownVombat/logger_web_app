@@ -22,7 +22,7 @@ const PhoneInput = ({dis}) => {
                     <div>
                         <p>Номер телефона неверен!</p>
                         <p>Введите номер телефона: </p>
-                        <input type='text' disabled={dis} placeholder={phonePH} onSubmit={() => validateNumber(this.value)}/>
+                        <input type='text' disabled={dis} placeholder={phonePH} onInput={() => validateNumber(this.value)}/>
                     </div>
                 );
             }
@@ -31,7 +31,7 @@ const PhoneInput = ({dis}) => {
     return (
         <div>
             <p>Введите номер телефона: </p>
-            <input type='text' disabled={dis} placeholder={phonePH} onSubmit={() => validateNumber(this.value)}/>
+            <input type='text' disabled={dis} placeholder={phonePH} onInput={() => validateNumber(this.value)}/>
         </div>
     );
 };

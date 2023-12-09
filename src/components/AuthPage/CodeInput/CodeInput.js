@@ -18,7 +18,7 @@ const CodeInput = ({dis}) => {
                     <div>
                         <p>Код неверен!</p>
                         <p>Введите код: </p>
-                        <input type='text' disabled={dis} onSubmit={() => validateCode(this.value)}/>
+                        <input type='text' disabled={dis} onInput={() => validateCode(this.value)}/>
                     </div>
                 );
             }
@@ -27,7 +27,7 @@ const CodeInput = ({dis}) => {
     return (
         <div>
             <p>Введите код: </p>
-            <input type='text' disabled={dis} onSubmit={() => validateCode(this.value)}/>
+            <input type='text' disabled={dis} onInput={() => validateCode(this.value)}/>
         </div>
     );
 };

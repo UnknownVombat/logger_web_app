@@ -15,7 +15,7 @@ const PasswordInput = ({dis}) => {
                 <div>
                     <p>Пароль неверен!</p>
                     <p>Введите пароль: </p>
-                    <input type='password' disabled={dis} onSubmit={() => sendPasswd(this.value)}/>
+                    <input type='password' disabled={dis} onInput={() => sendPasswd(this.value)}/>
                 </div>
             );
         }
@@ -23,7 +23,7 @@ const PasswordInput = ({dis}) => {
     return (
         <div>
             <p>Введите пароль: </p>
-            <input type='password' disabled={dis} onSubmit={() => sendPasswd(this.value)}/>
+            <input type='password' disabled={dis} onInput={() => sendPasswd(this.value)}/>
         </div>
     );
 };
