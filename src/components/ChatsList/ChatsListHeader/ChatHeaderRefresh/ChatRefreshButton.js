@@ -16,7 +16,7 @@ const ChatRefreshButton = () => {
     }
 
     return (
-        <NavLink to={'/'} className={styles.CardLink} onClick={() => parseChats(user_id)}>
+        <NavLink to={'/'} className={styles.buttonDiv} onClick={() => parseChats(user_id)}>
             <box-icon name='refresh' color='var(--tg-theme-text-color)'></box-icon>
         </NavLink>
     );
