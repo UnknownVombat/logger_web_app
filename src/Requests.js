@@ -38,7 +38,9 @@ export async function sendPhone(phone, user_id) {
     const data = {'phone': phone, 'user_id': user_id}
     const headers = {
         'accept': 'application/json',
-        'content-type': 'application/json;charset=utf-8'}
+        'accept-encoding': 'gzip,deflate,br',
+        'content-type': 'application/json;charset=utf-8',
+        'Access-Control-Allow-Origin': '*'}
     try {
         const response = await fetch(url, {headers: headers, method: 'POST', body: JSON.stringify(data)})
         if (!response.ok){
@@ -58,7 +60,9 @@ export async function sendCode(code, user_id) {
     const data = {'code': code, 'user_id': user_id}
     const headers = {
         'accept': 'application/json',
-        'content-type': 'application/json;charset=utf-8'}
+        'accept-encoding': 'gzip,deflate,br',
+        'content-type': 'application/json;charset=utf-8',
+        'Access-Control-Allow-Origin': '*'}
     try {
         const response = await fetch(url, {headers: headers, method: 'POST', body: JSON.stringify(data)})
         if (!response.ok){
@@ -78,7 +82,9 @@ export async function sendPassword(password, user_id) {
     const data = {'password': password, 'user_id': user_id}
     const headers = {
         'accept': 'application/json',
-        'content-type': 'application/json;charset=utf-8'}
+        'accept-encoding': 'gzip,deflate,br',
+        'content-type': 'application/json;charset=utf-8',
+        'Access-Control-Allow-Origin': '*'}
     try {
         const response = await fetch(url, {headers: headers, method: 'POST', body: JSON.stringify(data)})
         if (!response.ok){
