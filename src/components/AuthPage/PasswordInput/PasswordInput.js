@@ -11,9 +11,9 @@ const PasswordInput = ({dis}) => {
         const password = form.value
         const result = await sendPassword(password, user_id)
         console.log(result)
-        if (result[0] === true) {
+        if (result === true) {
             resetStep('ready')
-        } else if (result[0] === false) {
+        } else if (result === false) {
             resetStep('password')
             return (
                 <div>
