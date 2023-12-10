@@ -9,7 +9,7 @@
     color: var(--tg-theme-text-color);
     border-radius: 10px;
     text-align: center;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 input {
