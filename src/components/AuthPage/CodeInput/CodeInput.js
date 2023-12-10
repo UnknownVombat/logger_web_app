@@ -21,7 +21,7 @@ const CodeInput = ({dis}) => {
                 return (
                     <div>
                         <p>Введите код: </p>
-                        <input type='text' id='code_input' disabled={dis}/>
+                        <input type='text' id='code_input' disabled={dis}/><br/>
                         <button onClick={() => validateCode()}>Проверить код</button>
                     </div>
                 );
@@ -32,7 +32,7 @@ const CodeInput = ({dis}) => {
         return (
             <div>
                 <p>Введите код: </p>
-                <input type='text' id='code_input' disabled={dis}/>
+                <input type='text' id='code_input' disabled={dis}/><br/>
                 <button onClick={() => validateCode()}>Проверить код</button>
             </div>
         );

@@ -25,7 +25,7 @@ const PhoneInput = ({dis}) => {
                     <div>
                         <p>Номер телефона неверен!</p>
                         <p>Введите номер телефона: </p>
-                        <input type='text' disabled={dis} placeholder={phonePH} id='phone_input'/>
+                        <input type='text' disabled={dis} placeholder={phonePH} id='phone_input'/><br/>
                         <button onClick={() => validateNumber()}>Получить код</button>
                     </div>
                 );
@@ -36,7 +36,7 @@ const PhoneInput = ({dis}) => {
         return (
             <div>
                 <p>Введите номер телефона: </p>
-                <input type='text' disabled={dis} placeholder={phonePH} id='phone_input'/>
+                <input type='text' disabled={dis} placeholder={phonePH} id='phone_input'/><br/>
                 <button onClick={() => validateNumber()}>Получить код</button>
             </div>
         );

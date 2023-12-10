@@ -19,7 +19,7 @@ const PasswordInput = ({dis}) => {
             return (
                 <div>
                     <p>Введите пароль: </p>
-                    <input type='password' disabled={dis} id='password_input'/>
+                    <input type='password' disabled={dis} id='password_input'/><br/>
                     <button onClick={() => sendPasswd()}>Проверить пароль</button>
                 </div>
             );
@@ -29,7 +29,7 @@ const PasswordInput = ({dis}) => {
         return (
             <div>
                 <p>Введите пароль: </p>
-                <input type='password' disabled={dis} id='password_input'/>
+                <input type='password' disabled={dis} id='password_input'/><br/>
                 <button onClick={() => sendPasswd()}>Проверить пароль</button>
             </div>
         );
