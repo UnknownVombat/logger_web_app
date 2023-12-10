@@ -35,8 +35,9 @@ const AuthForm = () => {
     } else if(step === 'ready') {
         return (
             <div className={styles.authDiv}>
-                <NavLink to={'/'} className={styles.link}>
-                    Авторизация успешна. Перейти к чатам
+                <p>Авторизация успешна.</p>
+                <NavLink to={'/'}>
+                    Перейти к чатам
                 </NavLink>
             </div>
         )
