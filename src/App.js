@@ -18,9 +18,9 @@ function App() {
                 <Route path='/' element={<Layout />}>
                     <Route index element={<ChatsList />}/>
                     <Route path='messages/:chat_id/:name' element={<ChatMessages />}/>
-                    <Route path='auth' element={<AuthForm />}/>
                     <Route path='*' element={<ChatsList />}/>
                 </Route>
+                <Route path='auth' element={<AuthForm />}/>
             </Routes>
         </div>
   );
