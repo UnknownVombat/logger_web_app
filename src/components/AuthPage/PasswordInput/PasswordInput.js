@@ -15,9 +15,9 @@ const PasswordInput = ({dis}) => {
             resetStep('ready')
         } else if (result === false) {
             resetStep('password')
+            alert('Неверный пароль!')
             return (
                 <div>
-                    <p>Пароль неверен!</p>
                     <p>Введите пароль: </p>
                     <input type='password' disabled={dis} id='password_input'/>
                     <button onClick={() => sendPasswd()}>Проверить пароль</button>

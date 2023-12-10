@@ -17,9 +17,9 @@ const CodeInput = ({dis}) => {
                 resetStep('password')
             } else {
                 resetStep('code')
+                alert('Неверный код!')
                 return (
                     <div>
-                        <p>Код неверен!</p>
                         <p>Введите код: </p>
                         <input type='text' id='code_input' disabled={dis}/>
                         <button onClick={() => validateCode()}>Проверить код</button>
