@@ -14,7 +14,7 @@ const RefreshButton = ({chat_id}) => {
     }
 
     return (
-        <NavLink to={`/messages/${chat_id[0]}/${chat_id[1]}`} className={styles.CardLink} onClick={() => parseMess(user_id, chat_id[0])}>
+        <NavLink to={`/messages/${chat_id[0]}/${chat_id[1]}`} className={styles.buttonDiv} onClick={() => parseMess(user_id, chat_id[0])}>
             <box-icon name='refresh' color='var(--tg-theme-text-color)'></box-icon>
         </NavLink>
     );
