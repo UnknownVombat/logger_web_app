@@ -6,7 +6,7 @@ const HeaderAuth = () => {
     return (
         <div>
             <NavLink to={'/auth'} className={styles.buttonDiv}>
-                <box-icon type='solid' name='user' color='var(--tg-theme-text-color)'></box-icon>
+                <box-icon type='solid' name='user-plus' color='var(--tg-theme-text-color)'></box-icon>
             </NavLink>
         </div>
     );
