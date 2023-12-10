@@ -6,7 +6,9 @@ const PasswordInput = ({dis}) => {
     const user_id = window.Telegram.WebApp.initDataUnsafe?.user?.id
     const resetStep = authStorage((state) => state.resetStep)
     const step = authStorage((state) => state.step)
-    async function sendPasswd(password){
+    async function sendPasswd(){
+        const form = document.getElementById('password_input')
+        const password = form.value
         const result = await sendPassword(password, user_id)
         if (result[0] === true) {
             resetStep('ready')
