@@ -4,6 +4,7 @@ import ChatCard from "./ChatCard/ChatCard";
 import {chatStorage} from "../../storages/ChatSearchStorage";
 import {getChats} from "../../Requests";
 import ChatsListHeader from "./ChatsListHeader/ChatsListHeader";
+import {authStorage} from "../../storages/AuthStorage";
 
 const ChatsList = () => {
     // const user_id = 530472030
@@ -12,6 +13,7 @@ const ChatsList = () => {
     const chats = chatStorage((state => state.filteredChats));
     const filterChats = chatStorage((state) => state.filterChats)
     const setChats = chatStorage((state) => state.setChats);
+    const resetStep = authStorage((state) => state.resetStep)
     useEffect(() => {
         async function parseChats(user_id){
             const chatsList = await getChats({user_id});
@@ -21,6 +23,7 @@ const ChatsList = () => {
 
         parseChats(user_id)
     }, [user_id, setChats, filterChats]);
+    resetStep('phone')
     if (chats.length === 0) {
         return (<div className={styles.ChatDiv}>
                     <h3 className={styles.h3}>Чаты</h3>
