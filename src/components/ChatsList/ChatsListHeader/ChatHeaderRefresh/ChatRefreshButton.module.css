@@ -1,8 +1,8 @@
 .buttonDiv {
     width: 30px;
     height: 30px;
-    padding: 6px;
+    padding: 0 6px 6px 6px;
     cursor: pointer;
     text-decoration: none;
-    margin: 3px 3px auto 3px;
+    margin: 2px 3px auto 3px;
 }
