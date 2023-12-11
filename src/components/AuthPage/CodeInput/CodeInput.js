@@ -11,13 +11,14 @@ const CodeInput = ({dis}) => {
         const code = codeInput.value
         if (parseInt(code)){
             const result = await sendCode(code, user)
+            alert(`Запрос вернул ${result}`)
             if (result[0] === true && result[1] === true) {
                 resetStep('ready')
             } else if (result[0] === true && result[1] === false) {
                 resetStep('password')
             } else {
                 resetStep('code')
-                alert(result[3])
+                alert(result[2])
                 return (
                     <div>
                         <p>Введите код: </p>
