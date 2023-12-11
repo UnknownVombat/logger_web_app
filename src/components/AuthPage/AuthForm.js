@@ -5,6 +5,7 @@ import CodeInput from "./CodeInput/CodeInput";
 import PasswordInput from "./PasswordInput/PasswordInput";
 import {NavLink} from "react-router-dom";
 import styles from './AuthForm.module.css'
+import UserInput from "./UserInput/UserInput";
 
 const AuthForm = () => {
     const step = authStorage((state) => state.step)
@@ -14,12 +15,14 @@ const AuthForm = () => {
     if(step === 'phone'){
         return (
             <div className={styles.authDiv}>
+                <UserInput dis={false} />
                 <PhoneInput dis={false} />
             </div>
         )
     } else if(step === 'code'){
         return (
             <div className={styles.authDiv}>
+                <UserInput dis={true} />
                 <PhoneInput dis={true} />
                 <CodeInput dis={false} />
             </div>
@@ -27,6 +30,7 @@ const AuthForm = () => {
     } else if(step === 'password'){
         return (
             <div className={styles.authDiv}>
+                <UserInput dis={true} />
                 <PhoneInput dis={true} />
                 <CodeInput dis={true} />
                 <PasswordInput />

@@ -3,13 +3,13 @@ import {authStorage} from "../../../storages/AuthStorage";
 import {sendPassword} from "../../../Requests";
 
 const PasswordInput = ({dis}) => {
-    const user_id = window.Telegram.WebApp.initDataUnsafe?.user?.id
     const resetStep = authStorage((state) => state.resetStep)
     const step = authStorage((state) => state.step)
+    const user = authStorage((state) => state.user)
     async function sendPasswd(){
         const form = document.getElementById('password_input')
         const password = form.value
-        const result = await sendPassword(password, user_id)
+        const result = await sendPassword(password, user)
         console.log(result)
         if (result === true) {
             resetStep('ready')

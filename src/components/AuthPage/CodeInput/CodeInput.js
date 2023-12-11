@@ -3,21 +3,21 @@ import {authStorage} from "../../../storages/AuthStorage";
 import {sendCode} from "../../../Requests";
 
 const CodeInput = ({dis}) => {
-    const user_id = window.Telegram.WebApp.initDataUnsafe?.user?.id
     const resetStep = authStorage((state) => state.resetStep)
     const step = authStorage((state) => state.step)
+    const user = authStorage((state) => state.user)
     async function validateCode(){
         const codeInput = document.getElementById('code_input')
         const code = codeInput.value
         if (parseInt(code)){
-            const result = await sendCode(code, user_id)
+            const result = await sendCode(code, user)
             if (result[0] === true && result[1] === true) {
                 resetStep('ready')
             } else if (result[0] === true && result[1] === false) {
                 resetStep('password')
             } else {
                 resetStep('code')
-                alert('Неверный код!')
+                alert(result[3])
                 return (
                     <div>
                         <p>Введите код: </p>
