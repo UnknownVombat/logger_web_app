@@ -37,7 +37,7 @@ const PhoneInput = ({dis}) => {
         resetStep('phone')
         return (
             <div>
-                <p>Номер телефона неверен!</p>
+                <p>ID аккаунта должно быть целым числом!</p>
                 <p>Введите номер телефона: </p>
                 <input type='text' disabled={dis} placeholder={phonePH} id='phone_input'/><br/>
                 <button onClick={() => validateNumber()}>Получить код</button>
