@@ -4,12 +4,16 @@ import {authStorage} from "../../../storages/AuthStorage";
 const HashInput = () => {
     const resetID = authStorage((state) => state.resetID)
     const resetHash = authStorage((state) => state.resetHash)
-    const idInput = document.getElementById('id_input')
-    const hashInput = document.getElementById('hash_input')
-    const apiID = idInput.value
-    const apiHash = hashInput.value
     const resetStep = authStorage((state) => state.step)
     function sendAPI (){
+        const idInput = document.getElementById('id_input')
+        console.log(idInput)
+        const hashInput = document.getElementById('hash_input')
+        console.log(hashInput)
+        const apiID = idInput.value
+        console.log(apiID)
+        const apiHash = hashInput.value
+        console.log(apiHash)
         resetID(apiID)
         resetHash(apiHash)
         resetStep('phone')
