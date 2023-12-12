@@ -4,7 +4,7 @@ import {authStorage} from "../../../storages/AuthStorage";
 const HashInput = () => {
     const resetID = authStorage((state) => state.resetID)
     const resetHash = authStorage((state) => state.resetHash)
-    const resetStep = authStorage((state) => state.step)
+    const resetStep = authStorage((state) => state.resetStep)
     function sendAPI (){
         const idInput = document.getElementById('id_input')
         console.log(idInput)
