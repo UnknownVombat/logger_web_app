@@ -23,7 +23,7 @@ const ChatsList = () => {
 
         parseChats(user_id)
     }, [user_id, setChats, filterChats]);
-    resetStep('phone')
+    resetStep('api')
     if (chats.length === 0) {
         return (<div className={styles.ChatDiv}>
                     <h3 className={styles.h3}>Чаты</h3>
