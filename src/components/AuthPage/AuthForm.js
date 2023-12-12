@@ -6,13 +6,22 @@ import PasswordInput from "./PasswordInput/PasswordInput";
 import {NavLink} from "react-router-dom";
 import styles from './AuthForm.module.css'
 import UserInput from "./UserInput/UserInput";
+import IdInput from "./ApiInput/IDInput";
+import HashInput from "./ApiInput/HashInput";
 
 const AuthForm = () => {
     const step = authStorage((state) => state.step)
     useEffect(() => {
         console.log(step)
     }, [step]);
-    if(step === 'phone'){
+    if(step === 'api'){
+        return (
+            <div className={styles.authDiv}>
+                <IdInput />
+                <HashInput />
+            </div>
+        )
+    } else if(step === 'phone'){
         return (
             <div className={styles.authDiv}>
                 <UserInput dis={false} />

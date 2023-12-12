@@ -31,11 +31,11 @@ export async function getMessages(user_id, chat_id) {
     }
 }
 
-export async function sendPhone(phone, user_id) {
+export async function sendPhone(phone, user_id, apiID, apiHash) {
     const baseUrl = 'http://127.0.0.1:8000'
     const point = '/send_phone'
     const url = baseUrl + point
-    const data = {'phone': phone, 'user_id': user_id}
+    const data = {'phone': phone, 'user_id': user_id, 'api_id': apiID, 'api_hash': apiHash}
     const headers = {
         'accept': 'application/json',
         'accept-encoding': 'gzip,deflate,br',

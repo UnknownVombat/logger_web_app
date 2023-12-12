@@ -6,6 +6,8 @@ const PhoneInput = ({dis}) => {
     const phonePH = authStorage((state) => state.phonePH)
     const resetStep = authStorage((state) => state.resetStep)
     const resetPhone = authStorage((state) => state.resetPhone)
+    const apiID = authStorage((state) => state.apiID)
+    const apiHash = authStorage((state) => state.apiHash)
     const step = authStorage((state) => state.step)
     const user = authStorage((state) => state.user)
     async function validateNumber(){
@@ -15,7 +17,7 @@ const PhoneInput = ({dis}) => {
             elements.toString().replace('+', '')
         }
         if (parseInt(elements)){
-            const result = await sendPhone(elements, user)
+            const result = await sendPhone(elements, user, apiID, apiHash)
             if (result.length > 1) {
                 resetStep('code')
             } else {
