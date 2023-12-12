@@ -16,8 +16,6 @@ const HashInput = () => {
     }
     return (
         <div>
-            <p>Введите API hash приложения</p>
-            <input type='text' id='hash_input'/>
             <button onClick={() => sendAPI()}>Отправить данные</button>
         </div>
     );

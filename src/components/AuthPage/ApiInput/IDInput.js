@@ -5,6 +5,8 @@ const IdInput = () => {
         <div>
             <p>Введите API ID приложения</p>
             <input type='text' id='id_input'/>
+            <p>Введите API hash приложения</p>
+            <input type='text' id='hash_input'/>
         </div>
     );
 };
