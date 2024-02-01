@@ -3,7 +3,7 @@ import {createJSONStorage, persist} from "zustand/middleware";
 
 export const authStorage = create(persist(
     (set) => ({
-        step: 'api',
+        step: 'phone',
         user: 1234567,
         phonePH: 'Введите номер телефона',
         codePH: 'Введите код',
